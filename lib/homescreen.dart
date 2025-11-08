@@ -1,3 +1,4 @@
+import 'package:evchargerrapp/signupscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class _HomescreenState extends State<Homescreen> {
 
             Column(
               children: [
-              SizedBox(height: 40,),
+              SizedBox(height: 70,),
               Center(
                 child: Image(
                   height: 70,
@@ -62,14 +63,14 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: 'password',
                   prefixIcon: Icon(Icons.lock_outline_rounded),
-                  suffixIcon: Icon(Icons.remove_red_eye_rounded),
+                  suffixIcon: Icon(Icons.visibility_off_outlined),
                   filled: true,
                   fillColor: Colors.white54,
                   focusedBorder: OutlineInputBorder(
@@ -114,13 +115,19 @@ class _HomescreenState extends State<Homescreen> {
                   Center(
                     child: Text('dont have an account?',
                       style: TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
                     ),
                   ),
-                  Text('Sign Up',style: TextStyle(
-                    decoration:TextDecoration.underline,
-                  ),)
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Signupscreen.id,);
+
+                    },
+                    child: Text('Sign Up',style: TextStyle(
+                      decoration:TextDecoration.underline,
+                    ),),
+                  )
                 ],
               ),
             ),
